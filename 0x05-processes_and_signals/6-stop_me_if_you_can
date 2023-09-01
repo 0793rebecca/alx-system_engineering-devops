@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Stop me if you can (infinity and beyond).
+
+PID=$(pgrep -o "4-to_infinity_and_beyond")
+if [ -n "$PID" ]; then
+    echo "Stopping process 4-to_infinity_and_beyond with PID $PID..."
+kill -15 "$PID"
+ wait "$PID"
+
+    echo "Process has been stopped."
+else
+    echo "Process 4-to_infinity_and_beyond is not running."
+fi
