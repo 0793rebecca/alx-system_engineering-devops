@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #a Bash script that displays lines containing the bash word
 
-ps -eo pid,cmd | awk '$2 ~ /bash/ {print $1, $2}'
+pgrep -l bash
