@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#connecting to port 98 on localhost
+
+sudo nc -1 localhost 98
