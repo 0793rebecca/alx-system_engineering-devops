@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#ip addresses for the domain
+
+localhost_ip="127.0.0.2"
+facebook_ip="8.8.8.8"
+
+if grep -q "localhost" /etc/hosts; then
+  sed -i "s/^\(127\.0\.0\.1\s\+\)localhost$/\1localhost $localhost_ip/" /etc/hosts
+else
+  echo "127.0.0.1 localhost $localhost_ip" >> /etc/hosts
+fi
+
+if grep -q "facebook.com" /etc/hosts; then
+  sed -i "s/^\(.*\)facebook\.com$/\1facebook.com $facebook_ip/" /etc/hosts
+else
+  echo "$facebook_ip facebook.com" >> /etc/hosts
+fi
+
+echo "DNS resolutions have been configured."
