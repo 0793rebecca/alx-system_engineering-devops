@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# active ports
+
+netstat -1
