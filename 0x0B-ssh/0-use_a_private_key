@@ -3,4 +3,4 @@
 #private_key="~/.ssh/school"
 #username="ubuntu"
 
-ssh -i $private_key -l $username $server_ip
+ssh -i ~/.ssh/school ubuntu@f0f0ed98573c.1fa60de7.alx-cod.online
