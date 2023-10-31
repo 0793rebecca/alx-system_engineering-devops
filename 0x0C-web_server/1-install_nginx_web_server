@@ -1,0 +1,6 @@
+!/usr/bin/env bash
+# Update the package list and install Nginx
+echo "<html><head><title>Hello World</title></head><body><p>Hello World!</p></body></html>" | sudo tee /var/www/html/index.html
+sudo sed -i 's/80 default_server;/80 default_server;\n        location \/ {\n            root \/var\/www\/html;\n            index index.html;\n        }/' /etc/nginx/sites-available/default
+sudo /etc/init.d/nginx restart
+echo "Nginx has been installed, configured, and is now serving 'Hello World!' on port 80."
